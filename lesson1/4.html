@@ -28,13 +28,14 @@
 <script>
   "use strict";
 
-  let number = +prompt('Введите число: ')
-  let ones = number%10
-  let remainder = Math.trunc(number/10)
-  let tens = remainder%10
-  remainder = Math.trunc(remainder/10)
-  let hundreds = remainder%10
-  alert(`В числе ${number} количество сотен: ${hundreds}, десятков: ${tens}, единиц: ${ones}`)
+  const number = +prompt('Введите число: ');
+  const ones = number%10;
+  let remainder = Math.trunc(number/10);
+  const tens = remainder%10;
+  remainder = Math.trunc(remainder/10);
+  const hundreds = remainder%10;
+  alert(`В числе ${number} количество сотен: ${hundreds}, десятков: ${tens}, \
+  единиц: ${ones}`);
 </script>
 </body>
 </html>

@@ -22,8 +22,9 @@
 <script>
   "use strict";
 
-  let degree = +prompt('Введите температуру в Цельсиях: ');
-  alert(`Цельсий: ${degree}, Фаренгейт: ${(9/5)*degree+32}`);
+  const degreeCelc = +prompt('Введите температуру в Цельсиях: ');
+  const degreeFaren = Math.round((9 / 5) * degree + 32);
+  alert(`Цельсий: ${degree}, Фаренгейт: ${degreeFaren}`);
 </script>
 </body>
 </html>
