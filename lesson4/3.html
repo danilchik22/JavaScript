@@ -53,15 +53,14 @@
       console.error('Передано число вне диапазона');
       return new NumberObject();
     }
-    const units = number%10;
-    number = Math.trunc(number/10);
-    const dozens = number%10;
-    number = Math.trunc(number/10);
-    const hundreds = number%10;
+    const units = number % 10;
+    number = Math.trunc(number / 10);
+    const dozens = number % 10;
+    number = Math.trunc(number / 10);
+    const hundreds = number % 10;
     return new NumberObject(units, dozens, hundreds);
   }
 
-  console.log(getDigitsOfNumber(9229));
 </script>
 </body>
 </html>
