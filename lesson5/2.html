@@ -33,8 +33,8 @@
   "super-dropdown", необходимо использовать методы forEach и querySelectorAll и
   свойство classList у элементов.
    */
-  const DropdownItemEl = document.querySelectorAll(".dropdown-item");
-  DropdownItemEl.forEach(element => {
+  const dropdownItemEl = document.querySelectorAll(".dropdown-item");
+  dropdownItemEl.forEach(element => {
     element.classList.add("super-dropdown");
   });
 
@@ -59,11 +59,11 @@
     <a href="#">link</a>
    */
   const divEl = document.getElementsByTagName('div');
-  for (let el of divEl) {
+  for (const el of divEl) {
     if (el.classList.contains('dropdown')) {
-     el.insertAdjacentHTML('afterend', '<a href="#">link</a>');
+      el.insertAdjacentHTML('afterend', '<a href="#">link</a>');
     }  
-  };
+  }
   /*
   5. У элемента с id "dropdownMenuButton" замените id на "superDropdown".
    */
