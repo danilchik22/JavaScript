@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+  <style>
+    i {
+      font-size: 50px;
+    }
+    .golden {
+      color: gold;
+    }
+  </style>
+</head>
+<body>
+<!--
+Необязательное задание.
+
+Выполнить все задачи в теге script. Комментарии, в которых написаны задачи, не
+стирать, код с решением задачи пишем под комментарием.
+-->
+
+<div class="stars_container">
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+</div>
+
+<script>
+  "use strict";
+
+  /*
+  1. При наведении на любую из звезд, данной звезде должен ставиться класс
+  golden, также такой класс должен ставиться всем звездам до нее слева.
+  */
+  function changeClassLeft(add, elementsAll, targetEl) {
+    for (const el of elementsAll) {
+      if (add && el.getBoundingClientRect().x < event.clientX) {
+        el.classList.add('golden');
+      }
+      if (!add && el.getBoundingClientRect().x < event.x) {
+        el.classList.remove('golden');
+      }
+    }
+  };
+  const iEl = document.querySelectorAll('i');
+  iEl.forEach(el => {
+    el.addEventListener('mouseover', event => {
+      event.target.classList.add('golden');
+      changeClassLeft(true, iEl, event.target);
+    })
+  });
+
+  /*
+  2. Когда мы уводим курсор мыши от звезды, все поставленные классы из первого
+  задания должны быть удалены.
+   */
+  iEl.forEach(el => {
+    el.addEventListener('mouseout', event => {
+      event.target.classList.remove('golden');
+      changeClassLeft(false, iEl, event);
+    })
+  });
+
+  /*
+  3. Когда мы переводим мышь от одной звезды к другой, у нас могут мигать
+  звезды (временно могут становиться черными). Почему так? Напишите словами.
+  Можем ли мы это исправить? Если да, то предложите решение.
+
+  Потому что звезды находятся друг от друга на расстоянии, между ними есть
+  промежуток, который не относится ни к одной звезде. Когда мы попадаем в него,
+  срабатывает событие mouseout и звезды становятся черными. Тут надо либо убрать
+  это расстояние, либо при событии mouseout проверять не на div ли мы навели.
+  */
+  const divEl = document.querySelector('div');
+  divEl.addEventListener('mouseover', event => {
+    changeClassLeft(true, iEl, event);
+  }
+  );
+  divEl.addEventListener('mouseout', event => {
+    changeClassLeft(false, iEl, event);
+  }
+  );
+</script>
+</body>
+</html>
