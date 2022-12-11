@@ -75,7 +75,7 @@
   атрибут "aria-labelledby" равный "dropdownMenuButton" используя dataset.
    */
   const ariaEl = document.querySelector('[aria-labelledby="dropdownMenuButton"]');
-  ariaEl.dataset.dataDd = '3';
+  ariaEl.dataset.dd = '3';
 
   /*
   7. Удалите атрибут type у элемента с классом "dropdown-toggle".
@@ -90,7 +90,7 @@
   Атрибут "class" содержит значение "btn btn-secondary dropdown-toggle"
    */
   const btnDropdown = document.querySelector('.btn.dropdown-toggle');
-  for (let attr of btnDropdown.attributes) {
+  for (const attr of btnDropdown.attributes) {
     console.log(`Атрибут "${attr.name}" содержит значение "${attr.value}"`);
   }
 
