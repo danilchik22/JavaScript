@@ -83,7 +83,7 @@
       return;
     }
     let innHtml = '';
-    products[event.target.dataset.type].map(product => {
+    products[event.target.dataset.type].foreach(product => {
       innHtml = innHtml + product.getProductMarkup();
     })
     productsEl.innerHTML = innHtml;

@@ -65,8 +65,8 @@
   ulEl.addEventListener('click', event => {
     if (!event.target.classList.contains('nav-link')) {
       return;
-    };
-    for(const el of navLinkEl) {
+    }
+    for (const el of navLinkEl) {
       if (event.target === el) {
         el.classList.add('active');
       } else {

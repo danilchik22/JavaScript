@@ -27,11 +27,11 @@
   function descendingOrder(n) {
     let number = String(n).split('');
     let result = '';
-    number.sort(function(a,b) {
+    number.sort((a, b) => {
       return b - a;
     });
     for (const el of number) {
-      result =+ number
+      result =+ number;
     }
     return Number(number.join(''));
   }
