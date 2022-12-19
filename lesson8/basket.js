@@ -5,10 +5,16 @@ for (const el of addToCartEl) {
         const parentAddToClick = el.parentNode.parentNode.parentNode;
         getNewUnit(parentAddToClick);
         changeFootCart();
-        const basket = document.querySelector('.myCart');
-        basket.style.display = "inline-block";
+        const countGood = document.querySelector('.countGood');
+        countGood.textContent = +countGood.textContent + 1;
     })
 }
+
+const cartIconWrapEl = document.querySelector('.cartIconWrap');
+cartIconWrapEl.addEventListener('click', () => {
+    const cart = document.querySelector('.myCart');
+    cart.style.display = "inline-block";
+})
 
 const closeEl = document.querySelector('#close');
 closeEl.addEventListener('click', () => {
